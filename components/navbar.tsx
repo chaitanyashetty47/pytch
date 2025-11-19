@@ -19,7 +19,7 @@ export const Navbar = ({ onJoinClick }: NavbarProps) => {
   const [open, setOpen] = useState(false);
   return (
     
-      <div className="flex relative md:rounded-full z-10 bg-zinc-100 justify-between items-center sm:mt-12 md:mt-4 max-w-4xl mx-auto  px-2 py-2 md:shadow-aceternity">
+      <div className="flex relative md:rounded-full z-30 bg-zinc-100 justify-between items-center sm:mt-12 md:mt-4 max-w-4xl mx-auto  px-2 py-2 md:shadow-aceternity">
         <Image
           src="/logo.png"
           alt="logo"
