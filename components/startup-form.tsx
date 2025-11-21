@@ -593,17 +593,17 @@ export function JoinNowDialog({
           </DialogHeader>
 
         <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as "startup" | "investor")} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 bg-zinc-100 p-1 rounded-full gap-2">
+          <TabsList className="grid w-full grid-cols-2 bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 p-1 rounded-full gap-2">
             <TabsTrigger 
               value="startup" 
-              className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-pytch-cta transition-all duration-150"
+              className="rounded-full text-zinc-400 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-pytch-cta transition-all duration-150 hover:text-white"
               disabled={isSubmitting}
             >
               Startup
             </TabsTrigger>
             <TabsTrigger 
               value="investor"
-              className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-pytch-cta transition-all duration-150"
+              className="rounded-full text-zinc-400 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-pytch-cta transition-all duration-150 hover:text-white"
               disabled={isSubmitting}
             >
               Investor

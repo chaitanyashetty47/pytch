@@ -68,61 +68,61 @@
 }
 
 /* ------------------------------
-   🌞 LIGHT MODE (Default)
+   🌚 DARK MODE (Default - #121212 theme)
 -------------------------------- */
 :root {
   --radius: 0.625rem;
 
-  /* Backgrounds */
-  --background: oklch(1 0 0); /* pure white */
-  --foreground: oklch(0.15 0 0); /* near-black text */
+  /* Backgrounds - #121212 dark theme */
+  --background: oklch(0.07 0 0); /* #121212 */
+  --foreground: oklch(0.985 0 0); /* white text */
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0 0);
+  --card: oklch(0.15 0 0); /* dark card */
+  --card-foreground: oklch(0.985 0 0);
 
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0 0);
+  --popover: oklch(0.15 0 0);
+  --popover-foreground: oklch(0.985 0 0);
 
   /* 🟡 Primary (Brand – #DAFF01) */
   --primary: oklch(0.94 0.25 107); /* #DAFF01 */
   --primary-foreground: oklch(0.15 0 0);
 
   /* 🟣 Secondary (UI – #C084FC) */
-  --secondary: oklch(0.64 0.21 305); /* soft purple (darker, hue 305) */
-  --secondary-foreground: oklch(0.15 0 0);
+  --secondary: oklch(0.72 0.21 305); /* soft purple (brighter for dark mode) */
+  --secondary-foreground: oklch(0.985 0 0);
 
-  /* Muted / Neutral */
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.55 0 0);
+  /* Muted / Surface */
+  --muted: oklch(0.2 0 0); /* zinc-900 equivalent */
+  --muted-foreground: oklch(0.7 0 0); /* zinc-400 */
 
-  /* Accent (used for hover states or subtle backgrounds) */
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.15 0 0);
+  /* Accent hover */
+  --accent: oklch(0.2 0 0); /* zinc-800 */
+  --accent-foreground: oklch(0.985 0 0);
 
   /* Borders & Inputs */
-  --border: oklch(0.92 0 0);
-  --input: oklch(0.92 0 0);
-  --ring: oklch(0.75 0 0);
+  --border: oklch(1 0 0 / 10%); /* zinc-800 equivalent */
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.55 0 0);
 
   /* Destructive */
   --destructive: oklch(0.6 0.25 27); /* red-ish tone */
 
-  /* Chart Palette */
-  --chart-1: oklch(0.72 0.21 305); /* purple (darker, hue 305) */
-  --chart-2: oklch(0.85 0.25 107); /* lime (#DAFF01) */
-  --chart-3: oklch(0.7 0.16 190); /* blue */
-  --chart-4: oklch(0.75 0.18 70);  /* orange */
-  --chart-5: oklch(0.65 0.14 260); /* violet */
+  /* Chart Palette – keep contrast strong */
+  --chart-1: oklch(0.7 0.22 305);
+  --chart-2: oklch(0.94 0.25 107);
+  --chart-3: oklch(0.65 0.18 190);
+  --chart-4: oklch(0.7 0.22 70);
+  --chart-5: oklch(0.6 0.18 260);
 
-  /* Sidebar */
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.15 0 0);
-  --sidebar-primary: var(--secondary); /* soft purple gradient base */
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.15 0 0);
-  --sidebar-border: oklch(0.92 0 0);
-  --sidebar-ring: oklch(0.7 0 0);
+  /* Sidebar Dark - #121212 theme */
+  --sidebar: oklch(0.12 0 0); /* zinc-900/95 equivalent, slightly lighter than #121212 */
+  --sidebar-foreground: oklch(0.985 0 0); /* white */
+  --sidebar-primary: oklch(0.94 0.25 107); /* primary brand color */
+  --sidebar-primary-foreground: oklch(0.15 0 0);
+  --sidebar-accent: oklch(0.18 0 0); /* zinc-800 for hover */
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.22 0 0); /* zinc-700 equivalent */
+  --sidebar-ring: oklch(0.94 0.25 107 / 50%); /* primary with opacity */
 }
 
 /* ------------------------------
