@@ -586,24 +586,24 @@ export function JoinNowDialog({
         )}
       <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-          <DialogTitle className="text-2xl">Join Pytch</DialogTitle>
+          <DialogTitle className="text-2xl text-black">Join Pytch</DialogTitle>
             <DialogDescription>
             Connect with investors or discover promising startups. Choose your role below.
             </DialogDescription>
           </DialogHeader>
 
         <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as "startup" | "investor")} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 p-1 rounded-full gap-2">
+          <TabsList className="grid w-full grid-cols-2 bg-white/80 backdrop-blur-sm border border-zinc-200 p-1 rounded-full gap-2">
             <TabsTrigger 
               value="startup" 
-              className="rounded-full text-zinc-400 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-pytch-cta transition-all duration-150 hover:text-white"
+              className="rounded-full text-zinc-600 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-pytch-cta transition-all duration-150 hover:text-zinc-900"
               disabled={isSubmitting}
             >
               Startup
             </TabsTrigger>
             <TabsTrigger 
               value="investor"
-              className="rounded-full text-zinc-400 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-pytch-cta transition-all duration-150 hover:text-white"
+              className="rounded-full text-zinc-600 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-pytch-cta transition-all duration-150 hover:text-zinc-900"
               disabled={isSubmitting}
             >
               Investor

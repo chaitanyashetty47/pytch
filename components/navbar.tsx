@@ -19,7 +19,7 @@ export const Navbar = ({ onJoinClick }: NavbarProps) => {
   const [open, setOpen] = useState(false);
   return (
     
-      <div className="flex relative md:rounded-full z-30 bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 justify-between items-center sm:mt-12 md:mt-4 max-w-4xl mx-auto px-2 py-2 md:shadow-aceternity">
+      <div className="flex relative md:rounded-full z-30 bg-white/80 backdrop-blur-sm border border-zinc-200 justify-between items-center sm:mt-12 md:mt-4 max-w-4xl mx-auto px-2 py-2 md:shadow-aceternity">
         <Image
           src="/logo.png"
           alt="logo"
@@ -27,10 +27,10 @@ export const Navbar = ({ onJoinClick }: NavbarProps) => {
           height={80}
           className="rounded-full"
         />
-        <div className="hidden md:flex items-center gap-4 text-sm text-zinc-400 mr-10 ">
+        <div className="hidden md:flex items-center gap-4 text-sm text-zinc-600 mr-10 ">
           {links.map((link, index) => (
             <Link
-              className="hover:text-white transition-colors duration-200"
+              className="hover:text-zinc-900 transition-colors duration-200"
               href={link.href}
               key={index}
             >
@@ -38,7 +38,7 @@ export const Navbar = ({ onJoinClick }: NavbarProps) => {
             </Link>
           ))}
         </div>
-        <button onClick={() => setOpen(!open)} className="md:hidden text-white">
+        <button onClick={() => setOpen(!open)} className="md:hidden text-zinc-900">
           <IconMenu2 />
         </button>
         <div className="hidden md:block">
@@ -50,11 +50,11 @@ export const Navbar = ({ onJoinClick }: NavbarProps) => {
           </button>
         </div>
         {open && (
-          <div className="absolute md:hidden inset-x-0 bg-zinc-900/95 backdrop-blur-sm border border-zinc-800 rounded-md shadow-aceternity top-16 max-w-[95%] mx-auto">
-            <div className="flex flex-col items-start gap-4 text-sm text-zinc-400 p-4">
+          <div className="absolute md:hidden inset-x-0 bg-white border border-zinc-200 rounded-md shadow-aceternity top-16 max-w-[95%] mx-auto">
+            <div className="flex flex-col items-start gap-4 text-sm text-zinc-600 p-4">
               {links.map((link, index) => (
                 <Link
-                  className="hover:text-white transition-colors duration-200"
+                  className="hover:text-zinc-900 transition-colors duration-200"
                   href={link.href}
                   key={index}
                 >
