@@ -2,7 +2,17 @@
 import { IconMenu2 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import  { useState } from "react";
+
+const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  if (href.startsWith('#')) {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+};
 
 type NavbarProps = {
   onJoinClick?: (tab: "startup" | "investor") => void;
@@ -10,10 +20,8 @@ type NavbarProps = {
 
 export const Navbar = ({ onJoinClick }: NavbarProps) => {
   const links = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
+    { name: "About Us", href: "#aboutus" },
+    { name: "Contact", href: "#contact" },
   ];
 
   const [open, setOpen] = useState(false);
@@ -37,6 +45,7 @@ export const Navbar = ({ onJoinClick }: NavbarProps) => {
               className="hover:text-zinc-900 transition-colors duration-200"
               href={link.href}
               key={index}
+              onClick={(e) => handleSmoothScroll(e, link.href)}
             >
               {link.name}
             </Link>
@@ -61,6 +70,10 @@ export const Navbar = ({ onJoinClick }: NavbarProps) => {
                   className="hover:text-zinc-900 transition-colors duration-200"
                   href={link.href}
                   key={index}
+                  onClick={(e) => {
+                    handleSmoothScroll(e, link.href);
+                    setOpen(false);
+                  }}
                 >
                   {link.name}
                 </Link>

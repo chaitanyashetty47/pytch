@@ -60,7 +60,7 @@ export default function Home() {
           
         </GridBackgroundDemo>
       </section>
-      <section id="features" className="flex flex-col items-center justify-center">
+      <section id="aboutus" className="flex flex-col items-center justify-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl mt-10 font-semibold text-center text-[#121212]">Built for the Future of Startup Investment</h2>
           <p className="text-center text-lg mt-4 text-zinc-600 max-w-lg mx-auto">
@@ -182,7 +182,7 @@ export default function Home() {
       </section>
       
       {/* Waitlist Banner */}
-      <section className="mt-20 w-full bg-gradient-to-b from-white to-[#1a8f63]">
+      <section id="waitlist" className="mt-20 w-full bg-gradient-to-b from-white to-[#1a8f63]">
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center px-6 py-16 text-center md:px-8">
           <h2 className="text-3xl font-semibold leading-tight text-[#121212] sm:text-4xl md:text-5xl lg:text-6xl">
             Join The Waitlist
@@ -211,7 +211,7 @@ export default function Home() {
       <JoinNowDialog open={dialogOpen} onOpenChange={setDialogOpen} defaultTab={activeTab} hideTrigger />
       
       {/* Footer Section */}
-      <footer className="mt-0 bg-primary">
+      <footer id="contact" className="mt-0 bg-primary">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             {/* First Column - Logo & Quick Links */}
@@ -225,10 +225,17 @@ export default function Home() {
               /> */}
               <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-[#121212]">Quick Links</h3>
               <a 
-                href="#features" 
+                href="#aboutus" 
                 className="text-[#121212]/80 hover:text-[#121212] transition-colors duration-200 mb-2 text-sm sm:text-base"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector('#aboutus');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
               >
-                Features
+                About Us
               </a>
             </div>
 

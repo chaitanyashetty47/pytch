@@ -181,6 +181,9 @@
    🧩 Base Layer
 -------------------------------- */
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     @apply border-border outline-ring/50;
   }
