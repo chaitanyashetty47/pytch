@@ -41,14 +41,14 @@ const startupFormSchema = z.object({
     .max(100, "Startup name must be at most 100 characters."),
   founderName: z
     .string()
-    .min(5, "Founder name must be at least 5 characters.")
+    .min(1, "Founder name must be at least 1 character.")
     .max(100, "Founder name must be at most 100 characters."),
   email: z.email("Founder email must be a valid email address."),
   phone: z
     .string()
     .regex(
       /^[6-9]\d{9}$/,
-      "Phone number must be a valid Indian phone number (10 digits starting with 6-9)"
+      "Phone number must be a valid Indian phone number"
     ),
   stage: z.enum(["Idea", "Pre-Seed", "Seed", "Series A", "Series B", "Series C"]),
   industry: z
@@ -80,7 +80,7 @@ const investorFormSchema = z.object({
     .string()
     .regex(
       /^[6-9]\d{9}$/,
-      "Phone number must be a valid Indian phone number (10 digits starting with 6-9)"
+      "Phone number must be a valid Indian phone number"
     ),
   investmentType: z.enum(
     ["Angel Investor", "Venture Capital", "Institutional Investor", "Family Office", "Individual Investor"]
@@ -222,11 +222,11 @@ function StartupForm({ onSuccess, setIsSubmitting }: { onSuccess?: () => void; s
                 id="startup-phone"
                 type="tel"
                 aria-invalid={fieldState.invalid}
-                placeholder="+91 9876543210"
+                placeholder="Enter your phone number"
                 autoComplete="tel"
               />
               <FieldDescription>
-                Enter Indian phone number (10 digits, optionally with +91)
+                Enter Indian phone number (10 digits)
               </FieldDescription>
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
@@ -442,11 +442,11 @@ function InvestorForm({ onSuccess, setIsSubmitting }: { onSuccess?: () => void; 
                 id="investor-phone"
                 type="tel"
                 aria-invalid={fieldState.invalid}
-                placeholder="+91 9876543210"
+                placeholder="Enter your phone number"
                 autoComplete="tel"
               />
               <FieldDescription>
-                Enter Indian phone number (10 digits, optionally with +91)
+                Enter Indian phone number (10 digits)
               </FieldDescription>
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
@@ -463,11 +463,11 @@ function InvestorForm({ onSuccess, setIsSubmitting }: { onSuccess?: () => void; 
                 <SelectTrigger
                   id="investor-type"
                   aria-invalid={fieldState.invalid}
-                  className="w-full"
+                  className="w-full "
                 >
-                  <SelectValue placeholder="Select investment type" />
+                  <SelectValue className="" placeholder="Select investment type" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="">
                   <SelectItem value="Angel Investor">Angel Investor</SelectItem>
                   <SelectItem value="Venture Capital">Venture Capital</SelectItem>
                   <SelectItem value="Institutional Investor">Institutional Investor</SelectItem>

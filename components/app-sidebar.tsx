@@ -47,7 +47,7 @@ const data = {
   teams: [
     {
       name: "Pytch",
-      logo: Command,
+      logo: "/logo.png",
       plan: "Enterprise",
     },
 
@@ -276,14 +276,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
         <Separator />
-        {/* <NavMain items={data.navMain} /> */}
       </SidebarHeader>
       <SidebarContent>
        <NavMain items={data.navMain} />
 
-        {/* <NavFavorites favorites={data.favorites} /> */}
-        {/* <NavWorkspaces workspaces={data.workspaces} /> */}
-        {/* <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
+       
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />

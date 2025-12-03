@@ -46,7 +46,7 @@ export default function Home() {
 
               <div className="relative max-w-[90%] w-full md:max-w-5xl mt-12 mx-auto rounded-3xl flex flex-col items-center justify-center overflow-hidden">
                 <Image 
-                  src="/dashboard-dark.png" 
+                  src="/dashboard.png" 
                   alt="hero" 
                   width={700} 
                   height={350} 
@@ -168,7 +168,7 @@ export default function Home() {
                 </div>
                 {/* Main icon */}
                 <div className="relative z-40 flex items-center justify-center rounded-full bg-[#20AB73] p-2">
-                  <Image src="/secure.svg" alt="Stock Market" width={25} height={25} />
+                  <Image src="/handshake.svg" alt="Stock Market" width={25} height={25} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-center mb-2 text-[#1a8f63]">Secure and Reliable</h3>
@@ -244,8 +244,9 @@ export default function Home() {
               <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-[#121212]">Contact Us</h3>
               <div className="flex items-center gap-2 text-[#121212]/80 hover:text-[#121212] transition-colors duration-200">
                 <Mail className="text-lg sm:text-xl" />
-                <a href="mailto:demo@gmail.com" className="text-xs sm:text-sm">
-                  demo@gmail.com
+                <a href="mailto:pytchconnect@gmail.com" className="text-xs sm:text-sm hover:cursor-pointer">
+                pytchconnect@gmail.com
+
                 </a>
               </div>
             </div>

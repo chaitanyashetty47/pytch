@@ -17,13 +17,13 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-
+import Image from "next/image"
 export function TeamSwitcher({
   teams,
 }: {
   teams: {
     name: string
-    logo: React.ElementType
+    logo: string
     plan: string
   }[]
 }) {
@@ -36,13 +36,10 @@ export function TeamSwitcher({
   return (
     <div className="flex items-center justify-left gap-3 py-4 px-4">
 
-        <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-7 items-center justify-center rounded-full">
-          <activeTeam.logo className="size-5" />
+        <div className="bg-black text-sidebar-primary-foreground flex aspect-square size-7 items-center justify-center rounded-full">
+          <Image src={activeTeam.logo} alt={activeTeam.name} width={24} height={24} />
         </div>
-        <span className="truncate font-medium">{activeTeam.name}</span>
-        
-        {/* <ChevronDown className="opacity-50" /> */}
+      <span className="truncate font-medium">{activeTeam.name}</span>
     </div>
-  
-  )
+  );
 }

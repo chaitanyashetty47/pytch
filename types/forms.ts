@@ -4,18 +4,18 @@ import * as z from "zod"
 export const startupFormSchema = z.object({
   startupName: z
     .string()
-    .min(5, "Startup name must be at least 5 characters.")
+    .min(1, "Startup name must be at least 1 character.")
     .max(100, "Startup name must be at most 100 characters."),
   founderName: z
     .string()
-    .min(5, "Founder name must be at least 5 characters.")
+    .min(1, "Founder name must be at least 1 character.")
     .max(100, "Founder name must be at most 100 characters."),
   email: z.email("Founder email must be a valid email address."),
   phone: z
     .string()
     .regex(
       /^(\+91[\-\s]?)?[6-9]\d{9}$/,
-      "Phone number must be a valid Indian phone number (10 digits starting with 6-9, optionally prefixed with +91)"
+      "Phone number must be a valid Indian phone number (10 digits starting with 6-9)"
     ),
   stage: z.enum(["Idea", "Pre-Seed", "Seed", "Series A", "Series B", "Series C"]),
   industry: z
@@ -33,8 +33,8 @@ export const startupFormSchema = z.object({
       (val) => !isNaN(Number(val)) && Number(val) <= 1000000000,
       "Funding required must be at most ₹100,00,00,000"
     ),
-  linkedIn: z.string().url("LinkedIn URL must be a valid URL.").optional().or(z.literal("")),
-  twitter: z.string().url("Twitter URL must be a valid URL.").optional().or(z.literal("")),
+  linkedIn: z.url("LinkedIn URL must be a valid URL.").optional().or(z.literal("")),
+  twitter: z.url("Twitter URL must be a valid URL.").optional().or(z.literal("")),
 })
 
 export const investorFormSchema = z.object({
@@ -47,7 +47,7 @@ export const investorFormSchema = z.object({
     .string()
     .regex(
       /^(\+91[\-\s]?)?[6-9]\d{9}$/,
-      "Phone number must be a valid Indian phone number (10 digits starting with 6-9, optionally prefixed with +91)"
+      "Phone number must be a valid Indian phone number (10 digits starting with 6-9)"
     ),
   investmentType: z.enum(
     ["Angel Investor", "Venture Capital", "Institutional Investor", "Family Office", "Individual Investor"]

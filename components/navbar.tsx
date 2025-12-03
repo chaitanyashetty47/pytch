@@ -20,13 +20,17 @@ export const Navbar = ({ onJoinClick }: NavbarProps) => {
   return (
     
       <div className="flex relative md:rounded-full z-30 bg-white/80 backdrop-blur-sm border border-zinc-200 justify-between items-center sm:mt-12 md:mt-4 max-w-4xl mx-auto px-2 py-2 md:shadow-aceternity">
-        <Image
-          src="/logo.png"
-          alt="logo"
-          width={80}
-          height={80}
-          className="rounded-full"
-        />
+        
+        <div className="flex items-center gap-2">
+            <Image
+            src="/logo.png"
+            alt="logo"
+            width={33}
+            height={33}
+            className="rounded-full"
+          />
+          <span className="font-medium text-lg text-black">Pytch</span>
+        </div>
         <div className="hidden md:flex items-center gap-4 text-sm text-zinc-600 mr-10 ">
           {links.map((link, index) => (
             <Link
